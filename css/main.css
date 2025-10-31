@@ -1120,9 +1120,9 @@ header .logo a {
 	font: 0/0 a;
 	text-shadow: none;
 	color: transparent;
-	width: 110px;
-	height: 25px;
-	background: url("../images/logo.png") no-repeat center;
+	/* width: 110px; */
+	/* height: 25px; */
+	/* background: url("../images/logo.png") no-repeat center; */
 	background-size: 110px 25px;
 }
 
@@ -1134,7 +1134,7 @@ header .logo a {
 	float: left;
 	width: 40px;
 	height: 40px;
-	margin-left: 20px;
+	margin-left: 85px;
 	margin-top: 13px;
 	display: block;
 	position: relative;
@@ -1271,8 +1271,8 @@ header .logo a {
  */
  @media only screen and (max-width: 1024px) {
     header .top-bar {
-        left: 50%;
-        transform: translateX(-50%);
+        /* left: 50%; */
+        /* transform: translateX(-50%); */
     }
 }
 
@@ -1427,6 +1427,16 @@ header .logo a {
 }
 .intro-social li a:hover, .intro-social li a:focus {
 	color: #cc005f;
+}
+
+.intro-social li a i {
+  font-size: 2.5rem;   /* double their current size */
+  transition: transform 0.3s ease;
+}
+
+/* Optional hover effect (makes it feel interactive) */
+.intro-social li a:hover i {
+  transform: scale(1.2);
 }
 
 /**
@@ -2204,11 +2214,34 @@ header .logo a {
 #stats .stat {
 	border-left: 1px solid rgba(255, 255, 255, 0.12);
 	min-height: 17.4rem;
+		display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between; /* icon up, title down */
+	gap: 8px;
+	padding: 16px 0;
 }
 #stats .stat:first-child {
 	border: none;
 }
+
+#stats .icon-part {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 80px;      /* uniform icon box height */
+	margin-bottom: 10px;
+}
+
+#stats .icon-part img {
+	width: 64px;
+	height: 64px;
+	object-fit: contain;   /* no stretching; keeps aspect ratio */
+	display: block;
+}
+
 #stats .icon-part i {
+
 	font-size: 4.8rem;
 	color: #000000;
 }
@@ -2222,6 +2255,8 @@ header .logo a {
 }
 #stats .stat-title {
 	color: rgba(255, 255, 255, 0.5);
+		margin: 0;          /* kill inconsistent default margins */
+	line-height: 1.2;
 }
 
 /**
@@ -2378,6 +2413,18 @@ header .logo a {
 #contact button.submitform:hover, #contact button.submitform:focus {
 	background: #cc005f;
 }
+
+#contact .contact-email {
+  color: #6e6e6e;   /* force override of other link styles */
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+#contact .contact-email:hover {
+  color: #ff0077;   /* or #ffffff if you prefer white */
+}
+
 #message-warning, #message-success {
 	display: none;
 	background: #0d0d0d;
@@ -2546,6 +2593,16 @@ footer .copyright span:last-child::after {
 	display: none;
 }
 
+.footer-social li a i {
+  font-size: 2.5rem;        /* double the current size */
+  transition: transform 0.3s ease;
+}
+
+/* Optional: add hover zoom for consistency */
+.footer-social li a:hover i {
+  transform: scale(1.2);
+}
+
 /**
  * responsive:
  * footer
@@ -2605,5 +2662,33 @@ footer .copyright span:last-child::after {
 #go-top a:hover {
 	background: #000000;
 }
+
+#stats > h5 {
+  color: #ffffff;
+  font-size: 1.6rem;        /* same as Contact */
+  /* font-weight: 700;         */
+  line-height: 1.875;
+  letter-spacing: .4rem;
+  margin: 0 0 3rem;
+  text-transform: uppercase; /* keep consistent with other section labels */
+}
+
+/* Make the individual skill names pure white */
+#stats .stat-title {
+  color: #ffffff; /* overrides the rgba(…0.5) */
+}
+
+
+.info-list a {
+  color: #888888;
+  text-decoration: none; /* optional: removes underline */
+}
+
+.info-list a:hover {
+  color: #ff0077; /* optional: make it white or any color on hover */
+}
+
+.intro-content .intro-position span:first-child::before { content: none !important; }
+.intro-content .intro-position span:last-child::after   { content: none !important; }
 
 /*# sourceMappingURL=main.css.map */
